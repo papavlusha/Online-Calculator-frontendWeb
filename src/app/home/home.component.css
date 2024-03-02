@@ -1,0 +1,32 @@
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*height: 100vh;*/
+  background-color: rgba(169, 169, 169, 0.3);
+  width: 100%;
+}
+
+.button {
+  background-color: rgba(250, 250, 250, 0.7);
+  /*background-color: rgba(140, 77, 9, 0.7); */
+  border: none;
+  color: black;
+  width: 50%; /* Ширина кнопок равна 50% ширины контейнера */
+  padding: 40px 0; /* Увеличил размер кнопок */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: rgba(250, 132, 43, 0.8);
+  color: black;
+}
