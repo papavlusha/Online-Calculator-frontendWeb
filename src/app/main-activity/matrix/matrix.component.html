@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <label for="rows">Rows (m): </label>
+  <input type="number" id="rows">
+  <label for="cols">Columns (n): </label>
+  <input type="number" id="cols">
+  <button onclick="createMatrix()">Create Matrix</button>
+</div>
+<div>
+  <table id="matrix"></table>
+</div>
+
+<script>
+  function createMatrix() {
+    const rows = parseInt(document.getElementById('rows').value);
+    const cols = parseInt(document.getElementById('cols').value);
+    const matrixTable = document.getElementById('matrix');
+    matrixTable.innerHTML = ''; // Очищаем содержимое таблицы
+
+    for (let i = 0; i < rows; i++) {
+      const row = document.createElement('tr');
+      for (let j = 0; j < cols; j++) {
+        const cell = document.createElement('td');
+        cell.textContent = `(${i + 1},${j + 1})`; // Заполняем ячейки значениями
+        row.appendChild(cell);
+      }
+      matrixTable.appendChild(row);
+    }
+  }
+</script>
+</body>
+</html>

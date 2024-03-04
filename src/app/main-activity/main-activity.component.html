@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="input-container">
+    <input type="text" [(ngModel)]="query" placeholder="Enter your query...">
+    <button (click)="submitQuery()">Submit</button>
+  </div>
+  <div *ngIf="result" class="result-container">
+    <h2>Result:</h2>
+    <p>{{ result }}</p>
+  </div>
+
+  <router-outlet></router-outlet>
+  <div class="button-panel">
+    <div class="button-row">
+      <button class="square-button" routerLink = "matrix">Button 1</button>
+      <button class="square-button">Button 2</button>
+      <button class="square-button">Button 3</button>
+      <button class="square-button">Button 4</button>
+    </div>
+    <div class="button-row">
+      <button class="square-button">Button 5</button>
+      <button class="square-button">Button 6</button>
+      <button class="square-button">Button 7</button>
+      <button class="square-button">Button 8</button>
+    </div>
+  </div>
+</div>

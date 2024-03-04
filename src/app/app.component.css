@@ -1,23 +1,31 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+/*html {*/
+/*  !*height: 100%;*!*/
+/*  !*min-height: calc(100% + 800px);*!*/
+/*  !*margin: 0;*!*/
+/*  !*padding: 0;*!*/
+/*  background-image: url('../data/2111.w039.n003.5B.p1.5.jpg');*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*}*/
 
-body {
+
+
+.background-container {
   background-image: url('../data/2111.w039.n003.5B.p1.5.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 400vh;
 }
 
 h1 {
   border: 7px rgba(250, 132, 43, 0.6) solid;
-  /*rgba(250, 132, 43, 0.8); */
-  border-radius: 50px; /* Закруглить углы рамки на 10 пикселей */
+  border-radius: 50px;
   height: 150px;
-  /*text-align: center;*/
   background-image: url('../data/Online Calculator.svg');
   background-color: rgba(245, 245, 245, 0.90);
   background-size: cover;
@@ -26,7 +34,7 @@ h1 {
 }
 
 .router-outlet {
-  /* Если вам нужны стили для router-outlet, добавьте их здесь */
+  flex-grow: 1;
 }
 
 .router-outlet-container {
@@ -36,18 +44,16 @@ h1 {
 }
 
 .button {
-  /*background-color: rgba(250, 250, 250, 0.7);*/
-  /*background-color: rgba(140, 77, 9, 0.7); */
   background-color: rgba(250, 132, 43, 0.3);
   border: none;
   color: black;
-  width: 5%; /* Ширина кнопок равна 50% ширины контейнера */
-  padding: 40px 0; /* Увеличил размер кнопок */
+  width: 10%;
+  padding: 30px 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
-  margin: 20px 0;
+  font-size: 50px;
+  margin: 1px 0;
   cursor: pointer;
   transition-duration: 0.4s;
   border-radius: 50%;
