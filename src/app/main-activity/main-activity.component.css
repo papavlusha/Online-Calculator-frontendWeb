@@ -1,5 +1,4 @@
 .container {
-  max-width: 600px;
   margin: 0 auto;
   text-align: center;
 }
@@ -17,7 +16,7 @@ input {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #ffa51e;
   color: white;
   border: none;
   cursor: pointer;
@@ -46,6 +45,11 @@ button:hover {
 }
 
 .square-button {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 50px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: flex-start;
 }

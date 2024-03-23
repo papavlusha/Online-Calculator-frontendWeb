@@ -19,7 +19,7 @@
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  height: 400vh;
+  height: 150vh;
 }
 
 h1 {
@@ -48,7 +48,7 @@ h1 {
   border: none;
   color: black;
   width: 10%;
-  padding: 30px 0;
+  padding: 40px 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;

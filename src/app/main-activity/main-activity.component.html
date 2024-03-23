@@ -8,13 +8,17 @@
     <p>{{ result }}</p>
   </div>
 
-  <router-outlet></router-outlet>
+
+  <div class="parent-container">
+    <router-outlet></router-outlet>
+  </div>
+
   <div class="button-panel">
     <div class="button-row">
-      <button class="square-button" routerLink = "matrix">Button 1</button>
-      <button class="square-button">Button 2</button>
-      <button class="square-button">Button 3</button>
-      <button class="square-button">Button 4</button>
+      <button class="square-button" routerLink = "matrix">Matrix</button>
+      <button class="square-button" routerLink = "conversion">Conversion</button>
+      <button class="square-button">Integral</button>
+      <button class="square-button">Graphics</button>
     </div>
     <div class="button-row">
       <button class="square-button">Button 5</button>
