@@ -3,6 +3,7 @@ import {RouterLink} from "@angular/router";
 import { AuthService } from './auth.service';
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -17,12 +18,12 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
-  username: string = "";
+  login: string = "";
   email: string = "";
   password: string = "";
   confirmPassword: string = "";
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   register(): void {
@@ -32,7 +33,7 @@ export class RegistrationComponent {
     }
 
     const userData = {
-      login: this.username,
+      login: this.login,
       email: this.email,
       password: this.password
     };
@@ -40,6 +41,8 @@ export class RegistrationComponent {
     this.authService.register(userData).subscribe({
       next: (response) => {
         console.log('Registration successful', response);
+        alert('Registration successful');
+        this.router.navigate(['/login']);
       },
       error: (error) => {
         console.error('Registration failed', error);

@@ -9,10 +9,10 @@
 <body>
 <div class="container">
   <form (ngSubmit)="register()">
-    <h2>Registration</h2>
+    <h2>Sign Up</h2>
     <div class="input-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      <label for="login">Login</label>
+      <input type="text" id="login" name="login" [(ngModel)]="login" required>
     </div>
     <div class="input-group">
       <label for="email">Email</label>
@@ -26,8 +26,8 @@
       <label for="confirm-password">Confirm Password</label>
       <input type="password" id="confirm-password" name="confirm-password" [(ngModel)]="confirmPassword" required>
     </div>
-    <button type="submit">Register</button>
-    <p>Already have an account? <a routerLink="/login">Login</a></p>
+    <button type="submit">Sign Up</button>
+    <p>Already have an account? <a routerLink="/login">Sign In</a></p>
   </form>
 </div>
 </body>
