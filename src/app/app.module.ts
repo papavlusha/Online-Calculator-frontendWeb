@@ -4,7 +4,8 @@ import { AppComponent } from './app.component';
 import {HomeComponent} from "./home/home.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {LoginComponent} from "./login/login.component";
-import {MainActivityModule} from "./main-activity/main-activity.module"; // Убедитесь, что AppComponent импортирован из соответствующего файла
+import {MainActivityModule} from "./main-activity/main-activity.module";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {MainActivityModule} from "./main-activity/main-activity.module"; // Уб
     HomeComponent,
     RegistrationComponent,
     LoginComponent,
-    MainActivityModule
+    MainActivityModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [
