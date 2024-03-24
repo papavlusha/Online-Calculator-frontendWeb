@@ -12,15 +12,15 @@ import {NgForOf} from "@angular/common";
   ],
   styleUrls: ['./matrix.component.css']
 })
+
+
 export class MatrixComponent {
   rows: number = 0;
   cols: number = 0;
   matrixA: any[][] = [];
   matrixB: any[][] = [];
   result: number = 0;
-  // buttons: number[] = [1, 2, 3, 4, 5, 6, 7];
   buttons: string[] = ['Найти определитель', 'Найти оратную', 'Транспонировать', 'Умножить на А', 'A+B', 'A*B', 'A-B'];
-
 
   createMatrix(): void {
     this.matrixA = [];
@@ -46,4 +46,5 @@ export class MatrixComponent {
   handleButtonClick(value: string): void {
     // Handle button click logic here
   }
+
 }

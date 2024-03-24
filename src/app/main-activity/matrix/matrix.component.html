@@ -3,7 +3,7 @@
     <label>Matrix A</label>
     <table>
       <tr *ngFor="let row of matrixA; let i = index">
-        <td *ngFor="let cell of row; let j = index"162>
+        <td *ngFor="let cell of row; let j = index">
           <input type="text" class="matrix-cell" [(ngModel)]="matrixA[i][j]">
         </td>
       </tr>
@@ -14,11 +14,11 @@
       <label for="cols">n: </label>
       <input type="text" class="input-field" [(ngModel)]="cols">
     </div>
-    <button class="button" (click)="createMatrix()">Create Matrix A</button>
+    <button class="button create-button" (click)="createMatrix()">Create Matrix A</button>
   </div>
 
   <div class="buttons-container">
-    <button *ngFor="let button of buttons" class="button" (click)="handleButtonClick(button)">{{ button }}</button>
+    <button *ngFor="let button of buttons" class="button action-button" (click)="handleButtonClick(button)">{{ button }}</button>
   </div>
 
   <div class="matrix-container">

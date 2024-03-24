@@ -1,24 +1,11 @@
-/*.container {*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*}*/
 .container {
-  /*display: block; !* Убедитесь, что ваш компонент отображается как блочный элемент *!*/
-  /*margin: 0; !* Сбросить любые отступы *!*/
-  padding: 0;
-  width: 1920px;
-  margin: 100px auto;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0px;
-  background-color: #fff;
-  /*padding: 20px;*/
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 100px auto; /* Устанавливаем отступы сверху и снизу и автоматический отступ по бокам */
+  width: 90%; /* Занимаем 90% ширины родительского контейнера */
+  display: flex; /* Используем flex-контейнер */
+  justify-content: center; /* Выравниваем содержимое по горизонтали по центру */
 }
 
 .matrix-container, .buttons-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,40 +32,18 @@
   width: 150px;
 }
 
-/*.buttons-container {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*}*/
-
-.action-button {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.result-container {
-  text-align: center;
-}
-
-
-.button-container {
+.buttons-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /*height: 100vh;*/
-  background-color: rgba(169, 169, 169, 0.3);
-  width: 100%;
 }
 
 .button {
   background-color: rgba(250, 132, 43, 0.3);
-  /*background-color: rgba(140, 77, 9, 0.7); */
   border: none;
   color: black;
-  width: 100%; /* Ширина кнопок равна 50% ширины контейнера */
-  padding: 10px 0; /* Увеличил размер кнопок */
+  width: 100%;
+  padding: 10px 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -92,4 +57,8 @@
 .button:hover {
   background-color: rgba(250, 132, 43, 0.8);
   color: black;
+}
+
+.result-container {
+  text-align: center;
 }
