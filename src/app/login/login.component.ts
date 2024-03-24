@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {AuthService} from "./auth.service";
 import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -9,30 +10,31 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './login.component.html',
   imports: [
     RouterLink,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
+  providers: [HttpClient, AuthService],
   styleUrl: './login.component.css'
 })
 
 export class LoginComponent {
-  email: string = '';
+  login: string = '';
   password: string = '';
-  // смотреть комент к регистрации
 
-  // constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
-  login(): void {
-    // this.authService.login(this.email, this.password)
-    //   .subscribe(
-    //     response => {
-    //       console.log('Login successful');
-    //       // Здесь вы можете добавить перенаправление на главную страницу или другие действия по вашему усмотрению
-    //     },
-    //     error => {
-    //       console.error('Login failed:', error);
-    //       // Здесь вы можете обработать ошибки аутентификации, например, отображение сообщений об ошибке пользователю
-    //     }
-    //   );
+  sign_in(): void {
+    this.authService.login(this.login, this.password).subscribe({
+      next: (response) => {
+        console.log('Login successful', response);
+        alert('Login successful');
+        this.router.navigate(['/']);
+      },
+      error: (error) => {
+        console.error('Login failed', error);
+      }
+    });
   }
 
 }

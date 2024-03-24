@@ -7,22 +7,21 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-
-  private baseUrl = 'http://localhost:8082/CarRentalApp'; // Базовый URL Spring Boot приложения
+  private baseUrl = 'http://localhost:8082/OnlineCalculator';
 
   constructor(private httpClient: HttpClient) { }
 
-  login(email: string, password: string): Observable<any> {
+  login(login: string, password: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
     const loginData = {
-      email: email,
+      login: login,
       password: password
     };
 
-    return this.httpClient.post<any>(`${this.baseUrl}/login`, loginData, { headers })
+    return this.httpClient.post<any>(`${this.baseUrl}/signin`, loginData, { headers })
       .pipe(
         catchError((error: any) => {
           console.error(error);
