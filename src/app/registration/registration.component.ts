@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import { AuthService } from './auth.service';
 import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-registration',
@@ -9,8 +10,10 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './registration.component.html',
   imports: [
     RouterLink,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
+  providers: [HttpClient, AuthService],
   styleUrl: './registration.component.css'
 })
 export class RegistrationComponent {
@@ -18,9 +21,9 @@ export class RegistrationComponent {
   email: string = "";
   password: string = "";
   confirmPassword: string = "";
-  // если разкоментить форма не отображается, так как проблемы с инициализацией
-  // как я понял когда правильно подключишься  должно быть лучше
-  // constructor(private authService: AuthService) { }
+
+  constructor(private authService: AuthService) {
+  }
 
   register(): void {
     if (this.password !== this.confirmPassword) {
@@ -29,21 +32,18 @@ export class RegistrationComponent {
     }
 
     const userData = {
-      username: this.username,
+      login: this.username,
       email: this.email,
       password: this.password
     };
 
-    // this.authService.register(userData)
-    //   .subscribe(
-    //     response => {
-    //       console.log('Registration successful');
-    //       // Здесь вы можете добавить перенаправление на страницу входа или другие действия по вашему усмотрению
-    //     },
-    //     error => {
-    //       console.error('Registration failed:', error);
-    //       // Здесь вы можете обработать ошибки регистрации, например, отображение сообщений об ошибке пользователю
-    //     }
-    //   );
+    this.authService.register(userData).subscribe({
+      next: (response) => {
+        console.log('Registration successful', response);
+      },
+      error: (error) => {
+        console.error('Registration failed', error);
+      }
+    });
   }
 }

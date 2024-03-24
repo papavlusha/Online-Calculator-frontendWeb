@@ -7,8 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-
-  private baseUrl = 'http://localhost:8082/CarRentalApp'; // тут другой
+  private baseUrl = 'http://localhost:8082/OnlineCalculator';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +16,7 @@ export class AuthService {
       'Content-Type': 'application/json'
     });
 
-    return this.httpClient.post<any>(`${this.baseUrl}/register`, userData, { headers })
+    return this.httpClient.post<any>(`${this.baseUrl}/signup`, userData, { headers })
       .pipe(
         catchError((error: any) => {
           console.error(error);
