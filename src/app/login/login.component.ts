@@ -33,6 +33,7 @@ export class LoginComponent {
       },
       error: (error) => {
         console.error('Login failed', error);
+        alert('Login failed');
       }
     });
   }
