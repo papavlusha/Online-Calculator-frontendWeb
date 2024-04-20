@@ -5,7 +5,7 @@ import {MatrixComponent} from "./matrix/matrix.component";
 import {MainActivityComponent} from "./main-activity/main-activity.component";
 import {HomeComponent} from "./home/home.component";
 import {ConversionComponent} from "./conversion/conversion.component";
-import {RouterLink, RouterOutlet} from "@angular/router";
+import {RouterLink, RouterModule, RouterOutlet} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 
 
@@ -19,8 +19,7 @@ import {TranslateModule} from "@ngx-translate/core";
     CommonModule,
     FormsModule,
     NgForOf,
-    RouterOutlet,
-    RouterLink,
+    RouterModule,
     TranslateModule
   ]
 })

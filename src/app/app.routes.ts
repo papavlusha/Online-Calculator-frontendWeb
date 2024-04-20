@@ -1,10 +1,11 @@
-import { Routes } from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./main/home/home.component";
 import {RegistrationComponent} from "./auth/registration/registration.component";
 import {LoginComponent} from "./auth/login/login.component";
 import {MainActivityComponent} from "./main/main-activity/main-activity.component";
 import {MatrixComponent} from "./main/matrix/matrix.component";
 import {ConversionComponent} from "./main/conversion/conversion.component";
+import {NgModule} from "@angular/core";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,5 +19,10 @@ export const routes: Routes = [
     ]},
   { path: '**', redirectTo: '' }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 
 export class AppRoutingModule { }
