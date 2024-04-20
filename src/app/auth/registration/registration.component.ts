@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
-import { AuthService } from './auth.service';
-import {FormsModule} from "@angular/forms";
+//import { AuthService } from './auth.service';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { Router } from '@angular/router';
+import {AuthService} from "../../auth.service";
+
 
 @Component({
   selector: 'app-registration',
-  standalone: true,
   templateUrl: './registration.component.html',
-  imports: [
-    RouterLink,
-    FormsModule,
-    HttpClientModule
-  ],
   providers: [HttpClient, AuthService],
-  styleUrl: './registration.component.css'
+  styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
   login: string = "";

@@ -5,11 +5,6 @@ import {NgForOf} from "@angular/common";
 @Component({
   selector: 'app-matrix',
   templateUrl: './matrix.component.html',
-  standalone: true,
-  imports: [
-    FormsModule,
-    NgForOf
-  ],
   styleUrls: ['./matrix.component.css']
 })
 

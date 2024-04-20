@@ -3,10 +3,6 @@ import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-conversion',
-  standalone: true,
-  imports: [
-    FormsModule
-  ],
   templateUrl: './conversion.component.html',
   styleUrl: './conversion.component.css'
 })

@@ -11,6 +11,22 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
+  register(userData: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+
+
+    return this.httpClient.post<any>(`${this.baseUrl}/signup`, userData, { headers })
+      .pipe(
+        catchError((error: any) => {
+          console.error(error);
+          return throwError(error);
+        })
+      );
+  }
+
   login(login: string, password: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -30,3 +46,5 @@ export class AuthService {
       );
   }
 }
+
+

@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {RegistrationComponent} from "./registration/registration.component";
-import {LoginComponent} from "./login/login.component";
-import {MainActivityComponent} from "./main-activity/main-activity.component";
-import {MatrixComponent} from "./main-activity/matrix/matrix.component";
-import {ConversionComponent} from "./main-activity/conversion/conversion.component";
+import {HomeComponent} from "./main/home/home.component";
+import {RegistrationComponent} from "./auth/registration/registration.component";
+import {LoginComponent} from "./auth/login/login.component";
+import {MainActivityComponent} from "./main/main-activity/main-activity.component";
+import {MatrixComponent} from "./main/matrix/matrix.component";
+import {ConversionComponent} from "./main/conversion/conversion.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

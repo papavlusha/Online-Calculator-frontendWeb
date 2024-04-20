@@ -1,0 +1,21 @@
+{
+  "mpEnter": "Войти",
+  "mpRegistration": "Регистрация",
+  "mpCalculator": "Калькулятор",
+  "mpAbout": "About",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "login": "Login",
+  "password": "password",
+  "notHave": "Don't have an account?",
+  "email": "Email",
+  "alreadyHave": "Already have an account?",
+  "confirm": "Confirm Password",
+  "conversion": "conversion",
+  "numberSystems": "number systems",
+  "binary": "Binary:",
+  "eight": "Eightfold:",
+  "ten": "Decimal:",
+  "sixteen": "Hexadecimal:",
+  "matrix": "Matrix"
+}
