@@ -1,3 +1,6 @@
+body {
+  background-color: rgba(250, 132, 43, 0.2);
+}
 
 .button-container {
   display: flex;
@@ -5,7 +8,8 @@
   justify-content: center;
   align-items: center;
   /*height: 100vh;*/
-  background-color: rgba(169, 169, 169, 0.3);
+  /*background-color: rgba(250, 132, 43, 0.2);*/
+  background-color: rgba(241, 237, 236, 0.2);;
   width: 100%;
 }
 
