@@ -9,9 +9,7 @@ import {query} from "@angular/animations";
   styleUrls: ['./main-activity.component.css']
 })
 
-
 export class MainActivityComponent {
-
   protected query = query;
   result: any;
 

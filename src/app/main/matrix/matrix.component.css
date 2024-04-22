@@ -1,8 +1,18 @@
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   margin: 100px auto; /* Устанавливаем отступы сверху и снизу и автоматический отступ по бокам */
-  width: 90%; /* Занимаем 90% ширины родительского контейнера */
+  width: 100%; /* Занимаем 90% ширины родительского контейнера */
   display: flex; /* Используем flex-контейнер */
   justify-content: center; /* Выравниваем содержимое по горизонтали по центру */
+  background: #cccccc;
 }
 
 .matrix-container, .buttons-container {

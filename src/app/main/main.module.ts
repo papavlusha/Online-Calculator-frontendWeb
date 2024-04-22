@@ -7,13 +7,15 @@ import {HomeComponent} from "./home/home.component";
 import {ConversionComponent} from "./conversion/conversion.component";
 import {RouterLink, RouterModule, RouterOutlet} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
+import {ChatComponent} from "./chat/chat.component";
 
 
 @NgModule({
   declarations: [MatrixComponent,
     MainActivityComponent,
     HomeComponent,
-    ConversionComponent
+    ConversionComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,

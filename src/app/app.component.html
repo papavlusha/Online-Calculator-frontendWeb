@@ -1,5 +1,12 @@
 <div class="background-container">
   <h1> <button class="button" routerLink="/">&#8962;</button></h1>
+  <div class="language-selector">
+    <select (change)="changeLanguage($event)">
+      <option value="by">Беларуская</option>
+      <option value="ru">Русский</option>
+      <option value="en">English</option>
+    </select>
+  </div>
 <!--  <button class="language-button" (click)="changeLanguage()">Language</button>-->
   <router-outlet></router-outlet>
 </div>

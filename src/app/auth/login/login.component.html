@@ -8,17 +8,17 @@
 <body>
 <div class="container">
   <form (ngSubmit)="sign_in()">
-    <h2>Sign In</h2>
+    <h2>{{ "signIn" | translate }}</h2>
     <div class="input-group">
-      <label for="login">Login</label>
+      <label for="login">{{ "login" | translate }}</label>
       <input type="text" id="login" name="login" [(ngModel)]="login" required>
     </div>
     <div class="input-group">
-      <label for="password">Password</label>
+      <label for="password">{{ "password" | translate }}</label>
       <input type="password" id="password" name="password" [(ngModel)]="password" required>
     </div>
-    <button type="submit">Sign In</button>
-    <p>{{ "notHave" | translate }}<a routerLink="/registration">Sign Up</a></p>
+    <button type="submit">{{ "signIn" | translate }}</button>
+    <p>{{ "notHave" | translate }}<a routerLink="/registration">{{ "signUp" | translate }}</a></p>
   </form>
 </div>
 </body>

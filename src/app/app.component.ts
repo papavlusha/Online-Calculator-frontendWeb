@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'OnlineCalculator';
+
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('by');
+    translate.use('by');
+  }
+
+  changeLanguage(event: any): void {
+    const lang = event.target.value;
+    if (lang) {
+      this.translate.use(lang);
+    }
+  }
 }

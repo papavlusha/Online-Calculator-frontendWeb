@@ -1,19 +1,19 @@
 <div class="converter">
-  <h2>Системы счисления</h2>
+  <h2>{{ "numberSystems" | translate }}</h2>
   <div class="input-container">
-    <label>Двоичная:</label>
+    <label>{{ "binary" | translate }}</label>
     <input type="number" [(ngModel)]="binary" (input)="convertFromBinary()" />
   </div>
   <div class="input-container">
-    <label>Восьмеричная:</label>
+    <label>{{ "eight" | translate }}</label>
     <input type="number" [(ngModel)]="octal" (input)="convertFromOctal()" />
   </div>
   <div class="input-container">
-    <label>Десятичная:</label>
+    <label>{{ "ten" | translate }}</label>
     <input type="number" [(ngModel)]="decimal" (input)="convertFromDecimal()" />
   </div>
   <div class="input-container">
-    <label>Шестнадцатеричная:</label>
+    <label>{{ "sixteen" | translate }}</label>
     <input type="text" [(ngModel)]="hexadecimal" (input)="convertFromHexadecimal()" />
   </div>
 </div>

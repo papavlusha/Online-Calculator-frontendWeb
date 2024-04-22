@@ -1,5 +1,23 @@
+
 {
-  "appTitle": "My Angular App",
-  "welcomeMessage": "Welcome to my app!",
-  "buttonText": "Click me"
+  "mpEnter": "Увайсці",
+  "mpRegistration": "Рэгістрацыя",
+  "mpCalculator": "Калькулятар",
+  "mpAbout": "Аб нас",
+  "signIn": "Увайсці",
+  "signUp": "Зарэгістравацца",
+  "login": "Лагін",
+  "password": "Пароль",
+  "notHave": "Няма акаўнта?",
+  "email": "Email",
+  "alreadyHave": "Ужо ёсць акаўнт?",
+  "confirm": "Пацвердзіце пароль",
+  "conversion": "Канвертар",
+  "numberSystems": "Сістэмы лічэння",
+  "binary": "Двайковая:",
+  "eight": "Васьмерковая:",
+  "ten": "Дзясятковая:",
+  "sixteen": "Шаснаццатковая:",
+  "matrix": "Матрыца"
 }
+

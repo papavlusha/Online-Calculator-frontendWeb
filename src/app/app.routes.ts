@@ -6,6 +6,7 @@ import {MainActivityComponent} from "./main/main-activity/main-activity.componen
 import {MatrixComponent} from "./main/matrix/matrix.component";
 import {ConversionComponent} from "./main/conversion/conversion.component";
 import {NgModule} from "@angular/core";
+import {ChatComponent} from "./main/chat/chat.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ export const routes: Routes = [
     component: MainActivityComponent,
     children: [
       { path: 'matrix', component: MatrixComponent },
-      { path: 'conversion', component: ConversionComponent }
+      { path: 'conversion', component: ConversionComponent },
+      { path: 'chat', component: ChatComponent}
     ]},
   { path: '**', redirectTo: '' }
 ];

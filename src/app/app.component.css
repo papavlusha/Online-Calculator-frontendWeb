@@ -65,3 +65,20 @@ h1 {
   background-color: rgba(250, 132, 43, 0.8);
   color: black;
 }
+
+
+
+.language-selector select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.language-selector select:hover {
+  background-color: #0056b3;
+}
+

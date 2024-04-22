@@ -9,25 +9,25 @@
 <body>
 <div class="container">
   <form (ngSubmit)="register()">
-    <h2>Sign Up</h2>
+    <h2>{{ "signUp" | translate }}</h2>
     <div class="input-group">
-      <label for="login">Login</label>
+      <label for="login">{{ "login" | translate }}</label>
       <input type="text" id="login" name="login" [(ngModel)]="login" required>
     </div>
     <div class="input-group">
-      <label for="email">Email</label>
+      <label for="email">{{ "email" | translate }}</label>
       <input type="email" id="email" name="email" [(ngModel)]="email" required>
     </div>
     <div class="input-group">
-      <label for="password">Password</label>
+      <label for="password">{{ "password" | translate }}</label>
       <input type="password" id="password" name="password" [(ngModel)]="password" required>
     </div>
     <div class="input-group">
       <label for="confirm-password">Confirm Password</label>
       <input type="password" id="confirm-password" name="confirm-password" [(ngModel)]="confirmPassword" required>
     </div>
-    <button type="submit">Sign Up</button>
-    <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+    <button type="submit">{{ "signUp" | translate }}</button>
+    <p>{{ "alreadyHave" | translate }}<a routerLink="/login">{{ "signIn" | translate }}</a></p>
   </form>
 </div>
 </body>
