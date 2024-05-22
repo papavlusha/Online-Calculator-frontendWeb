@@ -8,6 +8,7 @@ import {ConversionComponent} from "./conversion/conversion.component";
 import {RouterLink, RouterModule, RouterOutlet} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {ChatComponent} from "./chat/chat.component";
+import {PrimeCalculationComponent} from "./prime-calculation/prime-calculation.component";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {ChatComponent} from "./chat/chat.component";
     MainActivityComponent,
     HomeComponent,
     ConversionComponent,
-    ChatComponent
+    ChatComponent,
+    PrimeCalculationComponent
   ],
   imports: [
     CommonModule,

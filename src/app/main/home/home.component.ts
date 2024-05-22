@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  downloadFile() {
+    const link = document.createElement('a');
+    link.href = 'assets/about.txt';  // путь к вашему файлу в папке assets
+    link.download = 'about.txt';  // имя файла для скачивания
+    link.click();
+  }
 }

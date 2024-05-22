@@ -1,20 +1,45 @@
-<!-- chat.component.html -->
-
-
-<div class="chat-container">
-  <div class="chat-header">
-    <h2>Chat</h2>
-  </div>
-
-  <div class="message-container" *ngFor="let message of messages">
-    <div class="message" [ngClass]="{'my-message': message.isMine, 'other-message': !message.isMine}">
-      {{ message.content }}
+<!-- chat-room.component.html -->
+<div class="container">
+  <div *ngIf="userData.connected; else registerTemplate">
+    <div class="chat-box">
+      <div class="member-list">
+        <ul>
+          <li (click)="tab = 'CHATROOM'" [class.active]="tab === 'CHATROOM'">Chatroom</li>
+          <li *ngFor="let name of privateChats.keys()" (click)="tab = name" [class.active]="tab === name">{{ name }}</li>
+        </ul>
+      </div>
+      <div *ngIf="tab === 'CHATROOM'" class="chat-content">
+        <ul class="chat-messages">
+          <li *ngFor="let chat of publicChats" [class.self]="chat.senderName === userData.username">
+            <div *ngIf="chat.senderName !== userData.username" class="avatar">{{ chat.senderName }}</div>
+            <div class="message-data">{{ chat.message }}</div>
+            <div *ngIf="chat.senderName === userData.username" class="avatar self">{{ chat.senderName }}</div>
+          </li>
+        </ul>
+        <div class="send-message">
+          <input type="text" class="input-message" placeholder="Enter the message" [(ngModel)]="userData.message" (input)="handleMessage($event)" />
+          <button type="button" class="send-button" (click)="sendValue()">Send</button>
+        </div>
+      </div>
+      <div *ngIf="tab !== 'CHATROOM'" class="chat-content">
+        <ul class="chat-messages">
+          <li *ngFor="let chat of privateChats.get(tab)" [class.self]="chat.senderName === userData.username">
+            <div *ngIf="chat.senderName !== userData.username" class="avatar">{{ chat.senderName }}</div>
+            <div class="message-data">{{ chat.message }}</div>
+            <div *ngIf="chat.senderName === userData.username" class="avatar self">{{ chat.senderName }}</div>
+          </li>
+        </ul>
+        <div class="send-message">
+          <input type="text" class="input-message" placeholder="Enter the message" [(ngModel)]="userData.message" (input)="handleMessage($event)" />
+          <button type="button" class="send-button" (click)="sendPrivateValue()">Send</button>
+        </div>
+      </div>
     </div>
   </div>
-
-  <form class="message-form" (ngSubmit)="sendMessage()">
-    <input type="text" [(ngModel)]="newMessage" placeholder="Type your message..." name="messageInput">
-    <button type="submit">Send</button>
-  </form>
-
+  <ng-template #registerTemplate>
+    <div class="register">
+      <input id="user-name" placeholder="Enter your name" [(ngModel)]="userData.username" (input)="handleUsername($event)" />
+      <button type="button" (click)="registerUser()">Connect</button>
+    </div>
+  </ng-template>
 </div>

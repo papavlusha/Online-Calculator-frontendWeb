@@ -28,7 +28,7 @@ export class RegistrationComponent {
     }
 
     const userData = {
-      login: this.login,
+      username: this.login,
       email: this.email,
       password: this.password
     };

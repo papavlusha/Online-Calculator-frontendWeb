@@ -12,7 +12,7 @@
   width: 100%; /* Занимаем 90% ширины родительского контейнера */
   display: flex; /* Используем flex-контейнер */
   justify-content: center; /* Выравниваем содержимое по горизонтали по центру */
-  background: #cccccc;
+  background-color: rgba(241, 237, 236, 0.7);
 }
 
 .matrix-container, .buttons-container {

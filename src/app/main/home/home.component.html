@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
 </head>
 <body>
 <div class="button-container">
   <button class="button" routerLink="/login">{{ "mpEnter" | translate }}</button>
   <button class="button" routerLink="/registration">{{ "mpRegistration" | translate }}</button>
   <button class="button" routerLink="/main-activity">{{ "mpCalculator" | translate }}</button>
-  <button class="button">{{ "mpAbout" | translate }}</button>
+  <button class="button" (click)="downloadFile()">{{ "mpAbout" | translate }}</button>
 </div>
 </body>
 </html>

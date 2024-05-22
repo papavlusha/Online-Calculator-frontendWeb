@@ -27,7 +27,6 @@ export class MatrixComponent {
       this.matrixA.push(row);
     }
 
-    // Assuming matrixB has the same dimensions as matrixA initially
     this.matrixB = [];
     for (let i = 0; i < this.rows; i++) {
       let row: any[] = [];
