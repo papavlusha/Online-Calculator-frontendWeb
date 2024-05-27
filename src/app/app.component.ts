@@ -7,6 +7,7 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
   title = 'OnlineCalculator';
+  library = 'cpp';
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('by');
@@ -18,5 +19,9 @@ export class AppComponent {
     if (lang) {
       this.translate.use(lang);
     }
+  }
+
+  changeLibrary(event: any): void {
+
   }
 }

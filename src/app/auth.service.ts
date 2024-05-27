@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import {BehaviorSubject, Observable, throwError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 // Интерфейсы для типизации
 export interface UserData {
-  username: string;
+  login: string;
   email: string;
   password: string;
 }
@@ -19,7 +19,7 @@ export interface AuthResponse {
   token: string;
   user: {
     id: string;
-    username: string;
+    login: string;
     email: string;
   };
 }
@@ -47,7 +47,13 @@ interface PrimeCountResponse {
 export class AuthService {
   private baseUrl = 'http://localhost:8082/OnlineCalculator';
 
+  private librarySource = new BehaviorSubject<string>('Cpp');
+  currentLibrary = this.librarySource.asObservable();
   constructor(private httpClient: HttpClient) { }
+
+  changeLibrary(library: string) {
+    this.librarySource.next(library);
+  }
 
   register(userData: UserData): Observable<AuthResponse> {
     const headers = new HttpHeaders({
@@ -74,7 +80,7 @@ export class AuthService {
   }
 
   calculatePrimeCount(request: PrimeCountRequest): Observable<PrimeCountResponse> {
-    const url = `${this.baseUrl}/prime-count`;
+    const url = `${this.baseUrl}/primes`;
     return this.httpClient.post<PrimeCountResponse>(url, request, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
