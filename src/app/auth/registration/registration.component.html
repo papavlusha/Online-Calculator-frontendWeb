@@ -22,7 +22,7 @@
       <input type="password" id="password" name="password" [(ngModel)]="password" required>
     </div>
     <div class="input-group">
-      <label for="confirm-password">Confirm Password</label>
+      <label for="confirm-password">{{ "passwordC" | translate }}</label>
       <input type="password" id="confirm-password" name="confirm-password" [(ngModel)]="confirmPassword" required>
     </div>
     <button type="submit">{{ "signUp" | translate }}</button>

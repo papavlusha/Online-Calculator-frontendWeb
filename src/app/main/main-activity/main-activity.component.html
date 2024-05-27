@@ -1,15 +1,12 @@
 <div class="container">
   <div class="input-container">
-    <input type="text" [(ngModel)]="query" placeholder="Enter your query...">
+    <input type="text" placeholder="Enter your query...">
     <button (click)="submitQuery()">Submit</button>
   </div>
   <div *ngIf="result" class="result-container">
     <h2>Result:</h2>
     <p>{{ result }}</p>
   </div>
-
-
-
 
   <div class="button-panel">
     <div class="button-row">
@@ -18,12 +15,12 @@
       <button class="square-button" routerLink = "chat">{{ "chat" | translate }}</button>
       <button class="square-button" routerLink = "prime-calculation">{{ "prime" | translate}}</button>
     </div>
-    <div class="button-row">
-      <button class="square-button">Button 5</button>
-      <button class="square-button">Button 6</button>
-      <button class="square-button">Button 7</button>
-      <button class="square-button">Button 8</button>
-    </div>
+<!--    <div class="button-row">-->
+<!--      <button class="square-button">Button 5</button>-->
+<!--      <button class="square-button">Button 6</button>-->
+<!--      <button class="square-button">Button 7</button>-->
+<!--      <button class="square-button">Button 8</button>-->
+<!--    </div>-->
   </div>
   <div class="parent-container">
     <router-outlet></router-outlet>

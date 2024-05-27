@@ -34,8 +34,6 @@ export class ConversionComponent {
   }
 
 
-
-
   convertFromBinary() {
     this.convert('2', this.binary, this.lib);
   }

@@ -22,7 +22,7 @@ export class MatrixComponent {
     for (let i = 0; i < this.rows; i++) {
       let row: any[] = [];
       for (let j = 0; j < this.cols; j++) {
-        row.push('');
+        row.push('0');
       }
       this.matrixA.push(row);
     }
@@ -31,7 +31,7 @@ export class MatrixComponent {
     for (let i = 0; i < this.rows; i++) {
       let row: any[] = [];
       for (let j = 0; j < this.cols; j++) {
-        row.push('');
+        row.push('0');
       }
       this.matrixB.push(row);
     }

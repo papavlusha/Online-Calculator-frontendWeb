@@ -13,6 +13,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 export class LoginComponent {
   login: string = '';
   password: string = '';
+  token: string = '';
 
   constructor(private authService: AuthService, private router: Router) {
   }
@@ -22,6 +23,7 @@ export class LoginComponent {
       next: (response) => {
         console.log('Login successful', response);
         alert('Login successful');
+        this.authService.setToken(response.token);
         this.router.navigate(['/']);
       },
       error: (error) => {

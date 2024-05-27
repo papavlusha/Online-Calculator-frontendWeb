@@ -66,6 +66,16 @@ export class AuthService {
     return this.librarySource;
   }
 
+  private token : string = "";
+
+  setToken(token_ : string) {
+    this.token = token_;
+  }
+
+  getToken() {
+    return this.token;
+  }
+
   constructor(private httpClient: HttpClient) { }
 
   changeLibrary(library: string) {

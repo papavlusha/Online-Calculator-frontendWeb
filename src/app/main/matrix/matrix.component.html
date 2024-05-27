@@ -2,8 +2,8 @@
   <div class="matrix-container">
     <label>Matrix A</label>
     <table>
-      <tr *ngFor="let row of matrixA; let i = index">
-        <td *ngFor="let cell of row; let j = index">
+      <tr *ngFor="let row of matrixA; let i = index as number">
+        <td *ngFor="let cell of row; let j = index as number">
           <input type="text" class="matrix-cell" [(ngModel)]="matrixA[i][j]">
         </td>
       </tr>
@@ -24,8 +24,8 @@
   <div class="matrix-container">
     <label>Matrix B</label>
     <table>
-      <tr *ngFor="let row of matrixB; let i = index">
-        <td *ngFor="let cell of row; let j = index">
+      <tr *ngFor="let row of matrixB; let i = index as number">
+        <td *ngFor="let cell of row; let j = index as number">
           <input type="text" class="matrix-cell" [(ngModel)]="matrixB[i][j]">
         </td>
       </tr>

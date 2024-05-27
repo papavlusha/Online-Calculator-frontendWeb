@@ -10,7 +10,6 @@ import {query} from "@angular/animations";
 })
 
 export class MainActivityComponent {
-  protected query = query;
   result: any;
 
   submitQuery() {

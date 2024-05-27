@@ -37,6 +37,7 @@ export class RegistrationComponent {
       next: (response) => {
         console.log('Registration successful', response);
         alert('Registration successful');
+        this.authService.setToken(response.token);
         this.router.navigate(['/login']);
       },
       error: (error) => {
