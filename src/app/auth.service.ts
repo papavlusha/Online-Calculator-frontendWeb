@@ -24,6 +24,23 @@ export interface AuthResponse {
   };
 }
 
+interface PrimeCountRequest {
+  start: number;
+  max: number;
+  threads: number;
+  cycleParam: number;
+}
+
+
+interface ErrorResponse {
+  error: string;
+}
+
+interface PrimeCountResponse {
+  result: string;
+  time: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,6 +71,17 @@ export class AuthService {
       .pipe(
         catchError(this.handleError)
       );
+  }
+
+  calculatePrimeCount(request: PrimeCountRequest): Observable<PrimeCountResponse> {
+    const url = `${this.baseUrl}/prime-count`;
+    return this.httpClient.post<PrimeCountResponse>(url, request, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }).pipe(
+      catchError(this.handleError)
+    );
   }
 
   // Универсальный обработчик ошибок

@@ -1,28 +1,29 @@
 <div class="prime-calculation-container">
   <div class="prime-calculator">
     <h2>Prime Number Calculator</h2>
-    <form (ngSubmit)="calculatePrimes()">
-      <label for="ax">AX:</label>
-      <input id="ax" name="ax" [(ngModel)]="ax" type="number" required />
-
-      <label for="start">Start:</label>
-      <input id="start" name="start" [(ngModel)]="start" type="number" required />
-
-      <label for="threads">Threads:</label>
-      <input id="threads" name="threads" [(ngModel)]="threads" type="number" required />
-
-      <label for="cycleParam">Cycle Parameter:</label>
-      <input id="cycleParam" name="cycleParam" [(ngModel)]="cycleParam" type="number" required />
-
-      <button type="submit">Calculate</button>
-    </form>
-
-    <div *ngIf="result">
-      <h3>Results:</h3>
-      <p>Time: {{ result.time }} ms</p>
-      <p>Speedup: {{ result.speedup }}</p>
-      <p>Primes found: {{ result.primeCount }}</p>
+    <div>
+      <label>Start: <input [(ngModel)]="start" type="number"></label>
     </div>
+    <div>
+      <label>Max: <input [(ngModel)]="max" type="number"></label>
+    </div>
+    <div>
+      <label>Threads: <input [(ngModel)]="threads" type="number"></label>
+    </div>
+    <div>
+      <label>Cycle Param: <input [(ngModel)]="cycleParam" type="number"></label>
+    </div>
+    <div>
+      <button (click)="calculate()">Calculate</button>
+    </div>
+    <div *ngIf="result">
+      <p>Result: {{ result }}</p>
+      <p>Time: {{ time }}</p>
+    </div>
+    <div *ngIf="error">
+      <p>Error: {{ error }}</p>
+    </div>
+
   </div>
 
 </div>

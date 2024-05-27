@@ -8,39 +8,37 @@ import {AuthService} from "../../auth.service";
   styleUrls: ['./prime-calculation.component.css']
 })
 export class PrimeCalculationComponent {
+  start: number = 2;
+  max: number = 10000000;
+  threads: number = 4;
+  cycleParam: number = 10000;
+  result: string = '';
+  time: string = '';
+  error: string = '';
   constructor(private http: HttpClient, private authService: AuthService) {
-    this.ax = 0;
-    this.start = 0;
-    this.threads = 1;
-    this.cycleParam = 1;
-    // @ts-ignore
-    this.result = null;
+
   }
 
-  ax: number;
-  start: number;
-  threads: number;
-  cycleParam: number;
-  result: { time: number, speedup: number, primeCount: number };
-
-
-
-  calculatePrimes() {
-    const params = {
-      ax: this.ax,
+  calculate() {
+    const request = {
       start: this.start,
+      max: this.max,
       threads: this.threads,
       cycleParam: this.cycleParam
     };
 
-    this.http.post<any>('/api/calculate-primes', params).subscribe(response => {
-      this.result = {
-        time: response.time,
-        speedup: response.speedup,
-        primeCount: response.primeCount
-      };
-    });
+    this.authService.calculatePrimeCount(request).subscribe(
+      (response) => {
+        this.result = response.result;
+        this.time = response.time;
+      },
+      (error) => {
+        this.error = error;
+      }
+    );
   }
+
+
 
 
   // Пример использования других методов контроллера аналогичны
