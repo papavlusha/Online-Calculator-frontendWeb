@@ -28,14 +28,10 @@ export class ConversionComponent {
 
       const request = { sourceBase, number, lib };
       this.authService.convertNumber(request).subscribe(response => {
-        if (response.error) {
-          console.error(response.error);
-        } else {
           this.binary = response.binaryNumber;
           this.decimal = response.decimalNumber;
           this.octal = response.octalNumber;
           this.hexadecimal = response.hexadecimalNumber;
-        }
       });
     });
   }
