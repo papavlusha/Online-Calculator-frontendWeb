@@ -16,12 +16,12 @@ export interface LoginData {
 }
 
 export interface AuthResponse {
-  token: string;
-  user: {
-    id: string;
-    login: string;
-    email: string;
-  };
+  accessToken: string;
+  // user: {
+  //   id: string;
+  //   login: string;
+  //   email: string;
+  // };
 }
 
 interface PrimeCountRequest {
@@ -69,11 +69,14 @@ export class AuthService {
   private token : string = "";
 
   setToken(token_ : string) {
-    this.token = token_;
+    localStorage.setItem('accessToken', token_)
+    // this.token = token_;
+    console.log(localStorage.getItem('accessToken'))
   }
 
   getToken() {
-    return this.token;
+    //return this.token;
+    return localStorage.getItem('accessToken')
   }
 
   constructor(private httpClient: HttpClient) { }
@@ -119,10 +122,11 @@ export class AuthService {
 
   convertNumber(request: ConvertRequest): Observable<ConvertResponse> {
     const url = `${this.baseUrl}/converter`;
+    console.log('sasda' + this.getToken());
     return this.httpClient.post<ConvertResponse>(url, request, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'  ,
-        'Authorization': `Bearer ${this.token}`
+        'Authorization': `Bearer ${this.getToken()}`
       })
     }).pipe(
       catchError(this.handleError)

@@ -23,7 +23,9 @@ export class LoginComponent {
       next: (response) => {
         console.log('Login successful', response);
         alert('Login successful');
-        this.authService.setToken(response.token);
+        console.log(response)
+        console.log(response.accessToken)
+        this.authService.setToken(response.accessToken);
         this.router.navigate(['/']);
       },
       error: (error) => {
