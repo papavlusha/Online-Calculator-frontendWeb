@@ -60,12 +60,16 @@ interface ConvertResponse {
 export class AuthService {
   private baseUrl = 'http://localhost:8082/OnlineCalculator';
 
-  private librarySource = new BehaviorSubject<string>('Cpp');
-  currentLibrary = this.librarySource.asObservable();
+  private librarySource = 'Cpp';
+
+  getLib() {
+    return this.librarySource;
+  }
+
   constructor(private httpClient: HttpClient) { }
 
   changeLibrary(library: string) {
-    this.librarySource.next(library);
+    this.librarySource = library;
   }
 
   register(userData: UserData): Observable<AuthResponse> {
