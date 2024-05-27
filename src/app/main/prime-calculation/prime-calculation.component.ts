@@ -8,23 +8,40 @@ import {AuthService} from "../../auth.service";
   styleUrls: ['./prime-calculation.component.css']
 })
 export class PrimeCalculationComponent {
-  constructor(private http: HttpClient, private authService: AuthService) {}
-
-  calculatePrimes(max: number, start: number, threads: number, cycleParam: number): void {
-    const requestData = {max, start, threads, cycleParam};
-
-
+  constructor(private http: HttpClient, private authService: AuthService) {
+    this.ax = 0;
+    this.start = 0;
+    this.threads = 1;
+    this.cycleParam = 1;
     // @ts-ignore
-    this.authService.login().subscribe(token => {
-      const headers = {'Authorization': `Bearer ${token}`};
+    this.result = null;
+  }
 
-      this.http.post('http://localhost:8082/OnlineCalculator/primes', requestData, {headers})
-        .subscribe(response => {
-          console.log('Primes calculation successful', response);
-        }, error => {
-          console.error('Primes calculation error', error);
-        });
+  ax: number;
+  start: number;
+  threads: number;
+  cycleParam: number;
+  result: { time: number, speedup: number, primeCount: number };
+
+
+
+  calculatePrimes() {
+    const params = {
+      ax: this.ax,
+      start: this.start,
+      threads: this.threads,
+      cycleParam: this.cycleParam
+    };
+
+    this.http.post<any>('/api/calculate-primes', params).subscribe(response => {
+      this.result = {
+        time: response.time,
+        speedup: response.speedup,
+        primeCount: response.primeCount
+      };
     });
   }
+
+
   // Пример использования других методов контроллера аналогичны
 }

@@ -9,16 +9,14 @@
   </div>
 
 
-  <div class="parent-container">
-    <router-outlet></router-outlet>
-  </div>
+
 
   <div class="button-panel">
     <div class="button-row">
       <button class="square-button" routerLink = "matrix">{{ "matrix" | translate }}</button>
       <button class="square-button" routerLink = "conversion">{{ "conversion" | translate }}</button>
       <button class="square-button" routerLink = "chat">{{ "chat" | translate }}</button>
-      <button class="square-button">{{ "prime" | translate}}</button>
+      <button class="square-button" routerLink = "prime-calculation">{{ "prime" | translate}}</button>
     </div>
     <div class="button-row">
       <button class="square-button">Button 5</button>
@@ -26,5 +24,8 @@
       <button class="square-button">Button 7</button>
       <button class="square-button">Button 8</button>
     </div>
+  </div>
+  <div class="parent-container">
+    <router-outlet></router-outlet>
   </div>
 </div>

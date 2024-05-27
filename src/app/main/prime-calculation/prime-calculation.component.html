@@ -1,4 +1,28 @@
 <div class="prime-calculation-container">
-  <h2>Prime Number Calculation</h2>
-  <!-- Здесь будут размещены элементы управления для ввода параметров вычислений -->
+  <div class="prime-calculator">
+    <h2>Prime Number Calculator</h2>
+    <form (ngSubmit)="calculatePrimes()">
+      <label for="ax">AX:</label>
+      <input id="ax" name="ax" [(ngModel)]="ax" type="number" required />
+
+      <label for="start">Start:</label>
+      <input id="start" name="start" [(ngModel)]="start" type="number" required />
+
+      <label for="threads">Threads:</label>
+      <input id="threads" name="threads" [(ngModel)]="threads" type="number" required />
+
+      <label for="cycleParam">Cycle Parameter:</label>
+      <input id="cycleParam" name="cycleParam" [(ngModel)]="cycleParam" type="number" required />
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    <div *ngIf="result">
+      <h3>Results:</h3>
+      <p>Time: {{ result.time }} ms</p>
+      <p>Speedup: {{ result.speedup }}</p>
+      <p>Primes found: {{ result.primeCount }}</p>
+    </div>
+  </div>
+
 </div>

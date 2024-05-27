@@ -1,6 +1,57 @@
 /* Оранжевая полупрозрачная тема */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .prime-calculation-container {
   background-color: rgba(255, 165, 0, 0.5); /* Оранжевый цвет с полупрозрачностью */
   padding: 20px;
   border-radius: 10px;
+}
+
+.prime-calculator {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.prime-calculator h2 {
+  text-align: center;
+}
+
+.prime-calculator form {
+  display: flex;
+  flex-direction: column;
+}
+
+.prime-calculator label {
+  margin-top: 10px;
+}
+
+.prime-calculator input {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.prime-calculator button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prime-calculator button:hover {
+  background-color: #0056b3;
+}
+
+.prime-calculator .results {
+  margin-top: 20px;
 }

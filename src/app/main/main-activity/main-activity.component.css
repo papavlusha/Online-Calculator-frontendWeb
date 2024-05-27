@@ -52,4 +52,5 @@ button:hover {
 .parent-container {
   display: flex;
   justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.98);
 }

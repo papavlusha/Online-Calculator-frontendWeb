@@ -7,6 +7,7 @@ import {MatrixComponent} from "./main/matrix/matrix.component";
 import {ConversionComponent} from "./main/conversion/conversion.component";
 import {NgModule} from "@angular/core";
 import {ChatComponent} from "./main/chat/chat.component";
+import {PrimeCalculationComponent} from "./main/prime-calculation/prime-calculation.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ export const routes: Routes = [
     children: [
       { path: 'matrix', component: MatrixComponent },
       { path: 'conversion', component: ConversionComponent },
-      { path: 'chat', component: ChatComponent}
+      { path: 'chat', component: ChatComponent},
+      { path: 'prime-calculation', component: PrimeCalculationComponent}
     ]},
   { path: '**', redirectTo: '' }
 ];
