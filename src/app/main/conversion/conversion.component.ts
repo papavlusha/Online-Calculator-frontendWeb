@@ -39,4 +39,20 @@ export class ConversionComponent {
       });
     });
   }
+
+  convertFromBinary() {
+    this.convert('2', this.binary);
+  }
+
+  convertFromOctal() {
+    this.convert('8', this.octal);
+  }
+
+  convertFromDecimal() {
+    this.convert('10', this.decimal);
+  }
+
+  convertFromHexadecimal() {
+    this.convert('16', this.hexadecimal);
+  }
 }
