@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {AuthService} from "./auth.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,7 @@ export class AppComponent {
   title = 'OnlineCalculator';
   library = 'cpp';
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private authService: AuthService) {
     translate.setDefaultLang('by');
     translate.use('by');
   }
@@ -21,7 +22,9 @@ export class AppComponent {
     }
   }
 
-  changeLibrary(event: any): void {
-
+  changeLibrary(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    const library = selectElement.value;
+    this.authService.changeLibrary(library);
   }
 }

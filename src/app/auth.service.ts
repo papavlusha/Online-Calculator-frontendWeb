@@ -41,6 +41,19 @@ interface PrimeCountResponse {
   time: string;
 }
 
+interface ConvertRequest {
+  sourceBase: string;
+  number: string;
+  lib: string;
+}
+
+interface ConvertResponse {
+  binaryNumber: string;
+  decimalNumber: string;
+  octalNumber: string;
+  hexadecimalNumber: string;
+  error?: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -82,6 +95,17 @@ export class AuthService {
   calculatePrimeCount(request: PrimeCountRequest): Observable<PrimeCountResponse> {
     const url = `${this.baseUrl}/primes`;
     return this.httpClient.post<PrimeCountResponse>(url, request, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  convertNumber(request: ConvertRequest): Observable<ConvertResponse> {
+    const url = `${this.baseUrl}/converter`;
+    return this.httpClient.post<ConvertResponse>(url, request, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })

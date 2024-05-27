@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../../auth.service";
 
 @Component({
   selector: 'app-conversion',
@@ -7,37 +9,34 @@ import { Component } from '@angular/core';
 })
 
 export class ConversionComponent {
-  decimal: number = 0;
   binary: string = '0';
   octal: string = '0';
+  decimal: string = '0';
   hexadecimal: string = '0';
 
-  convertFromDecimal() {
-    const value = this.decimal;
-    this.binary = value.toString(2);
-    this.octal = value.toString(8);
-    this.hexadecimal = value.toString(16).toUpperCase();
-  }
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
-  convertFromBinary() {
-    const value = parseInt(this.binary.toString(), 2);
-    this.decimal = value;
-    this.octal = value.toString(8);
-    this.hexadecimal = value.toString(16).toUpperCase();
-  }
+  convert(sourceBase: string, number: string) {
+    let lib: string;
 
-  convertFromOctal() {
-    const value = parseInt(this.octal.toString(), 8);
-    this.decimal = value;
-    this.binary = value.toString(2);
-    this.hexadecimal = value.toString(16).toUpperCase();
-  }
+    this.authService.currentLibrary.subscribe(library => {
+      if (library === 'Cpp') {
+        lib = 'Cpp';
+      } else if (library === 'Java') {
+        lib = 'Java';
+      }
 
-  convertFromHexadecimal() {
-    const value = parseInt(this.hexadecimal.toString(), 16);
-    this.decimal = value;
-    this.binary = value.toString(2);
-    this.octal = value.toString(8);
+      const request = { sourceBase, number, lib };
+      this.authService.convertNumber(request).subscribe(response => {
+        if (response.error) {
+          console.error(response.error);
+        } else {
+          this.binary = response.binaryNumber;
+          this.decimal = response.decimalNumber;
+          this.octal = response.octalNumber;
+          this.hexadecimal = response.hexadecimalNumber;
+        }
+      });
+    });
   }
-
 }
