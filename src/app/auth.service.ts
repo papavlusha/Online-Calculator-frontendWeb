@@ -121,7 +121,8 @@ export class AuthService {
     const url = `${this.baseUrl}/converter`;
     return this.httpClient.post<ConvertResponse>(url, request, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json'  ,
+        'Authorization': `Bearer ${this.token}`
       })
     }).pipe(
       catchError(this.handleError)
