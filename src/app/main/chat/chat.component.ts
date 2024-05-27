@@ -1,7 +1,7 @@
 // chat-room.component.ts
 import { Component, OnInit } from '@angular/core';
 import * as Stomp from '@stomp/stompjs';
-import * as SockJS from 'sockjs-client';
+import SockJS from 'sockjs-client';
 
 interface ChatMessage {
   senderName: string;
@@ -32,8 +32,8 @@ export class ChatComponent implements OnInit {
   }
 
   connect() {
-  //   const socket = new SockJS('http://localhost:8080/ws');
- //   this.stompClient = Stomp.over(socket);
+    const socket = new SockJS('http://localhost:8082/OnlineCalculator/ws');
+    this.stompClient = Stomp.Stomp.over(socket);
     this.stompClient.connect({}, this.onConnected.bind(this), this.onError);
   }
 

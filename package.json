@@ -21,9 +21,12 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@stomp/stompjs": "^7.0.0",
+    "@types/socket.io": "^3.0.2",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
+    "sockjs": "^0.3.24",
     "sockjs-client": "^1.6.1",
+    "stomp": "^0.1.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
