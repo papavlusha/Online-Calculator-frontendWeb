@@ -16,45 +16,58 @@ export class ConversionComponent {
   lib: string = 'Cpp'
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  convert(sourceBase: string, number: string, lib: string) {
+
+  setCurrentLibrary() {
     this.authService.currentLibrary.subscribe(library => {
-
       if (library === 'Cpp') {
-        lib = 'Cpp';
+        this.lib = 'Cpp';
       } else if (library === 'Java') {
-        lib = 'Java';
+        this.lib = 'Java';
       }
-
-      const request = { sourceBase, number, lib};
-
-      this.authService.convertNumber(request).subscribe(
-        response => {
-          this.binary = response.binaryNumber;
-          this.decimal = response.decimalNumber;
-          this.octal = response.octalNumber;
-          this.hexadecimal = response.hexadecimalNumber;
-        },
-        error => {
-          console.error('Ошибка при выполнении запроса:', error);
-        }
-      );
     });
   }
 
+  convert(sourceBase: string, number: string, lib: string) {
+    // Проверяем, что введенное значение не пустое
+    if (!number.trim()) {
+      console.error('Введите число.');
+      return;
+    }
+
+    const request = { sourceBase, number, lib: this.lib };
+
+    this.authService.convertNumber(request).subscribe(
+      response => {
+        this.binary = response.binaryNumber;
+        this.decimal = response.decimalNumber;
+        this.octal = response.octalNumber;
+        this.hexadecimal = response.hexadecimalNumber;
+      },
+      error => {
+        console.error('Ошибка при выполнении запроса:', error);
+      }
+    );
+  }
+
+
 
   convertFromBinary() {
+    this.setCurrentLibrary();
     this.convert('2', this.binary, this.lib);
   }
 
   convertFromOctal() {
+    this.setCurrentLibrary();
     this.convert('8', this.octal, this.lib);
   }
 
   convertFromDecimal() {
+    this.setCurrentLibrary();
     this.convert('10', this.decimal, this.lib);
   }
 
   convertFromHexadecimal() {
+    this.setCurrentLibrary();
     this.convert('16', this.hexadecimal, this.lib);
   }
 }
