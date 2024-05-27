@@ -4,8 +4,8 @@
     <div class="chat-box">
       <div class="member-list">
         <ul>
-          <li (click)="tab = 'CHATROOM'" [class.active]="tab === 'CHATROOM'">Chatroom</li>
-          <li *ngFor="let name of privateChats.keys()" (click)="tab = name" [class.active]="tab === name">{{ name }}</li>
+          <li class="item-name" (click)="tab = 'CHATROOM'" [class.active]="tab === 'CHATROOM'">Chatroom</li>
+          <li class="item-name" *ngFor="let name of privateChats.keys()" (click)="tab = name" [class.active]="tab === name">{{ name }}</li>
         </ul>
       </div>
       <div *ngIf="tab === 'CHATROOM'" class="chat-content">
