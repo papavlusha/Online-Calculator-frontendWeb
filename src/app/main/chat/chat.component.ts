@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Stomp from '@stomp/stompjs';
 import SockJS from 'sockjs-client';
+import {HttpHeaders} from "@angular/common/http";
 
 interface ChatMessage {
   senderName: string;
