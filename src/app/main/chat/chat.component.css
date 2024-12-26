@@ -120,13 +120,14 @@ button:hover {
 
 .message {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Выравниваем текст по верхнему краю */
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 8px;
   background-color: #f1f1f1;
   transition: background-color 0.3s;
   max-width: 70%;
+  border-bottom: 1px solid #ddd; /* Разделительная линия */
 }
 
 .message.self {
@@ -158,8 +159,8 @@ button:hover {
 }
 
 .message-data {
-  margin-top: 5px;
-  text-align: center;
+  margin-top: 10px;
+  text-align: left;
 }
 
 .send-message {
