@@ -120,14 +120,14 @@ button:hover {
 
 .message {
   display: flex;
-  align-items: flex-start; /* Выравниваем текст по верхнему краю */
+  align-items: flex-start;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 8px;
   background-color: #f1f1f1;
   transition: background-color 0.3s;
   max-width: 70%;
-  border-bottom: 1px solid #ddd; /* Разделительная линия */
+  border-bottom: 1px solid #ddd;
 }
 
 .message.self {
@@ -150,6 +150,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   font-size: 1em;
+  flex-shrink: 0;
 }
 
 .avatar.self {
@@ -159,8 +160,11 @@ button:hover {
 }
 
 .message-data {
-  margin-top: 10px;
+  margin-left: 30px;
   text-align: left;
+  word-wrap: break-word;
+  flex-grow: 1;
+  padding-bottom: 30px;
 }
 
 .send-message {
