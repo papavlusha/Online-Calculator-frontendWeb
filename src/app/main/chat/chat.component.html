@@ -11,8 +11,7 @@
       <div *ngIf="tab === 'CHATROOM'" class="chat-content">
         <ul class="chat-messages">
           <li *ngFor="let chat of publicChats" [class.self]="chat.senderName === userData.username">
-            <div *ngIf="chat.senderName !== userData.username" class="avatar">{{ chat.senderName }}</div>
-            <div *ngIf="chat.senderName === userData.username" class="avatar self">{{ chat.senderName }}</div>
+            <div class="avatar">{{ chat.senderName }}</div>
             <div class="message-data">{{ chat.message }}</div>
           </li>
         </ul>
@@ -24,8 +23,7 @@
       <div *ngIf="tab !== 'CHATROOM'" class="chat-content">
         <ul class="chat-messages">
           <li *ngFor="let chat of privateChats.get(tab)" [class.self]="chat.senderName === userData.username">
-            <div *ngIf="chat.senderName !== userData.username" class="avatar">{{ chat.senderName }}</div>
-            <div *ngIf="chat.senderName === userData.username" class="avatar self">{{ chat.senderName }}</div>
+            <div class="avatar">{{ chat.senderName }}</div>
             <div class="message-data">{{ chat.message }}</div>
           </li>
         </ul>
