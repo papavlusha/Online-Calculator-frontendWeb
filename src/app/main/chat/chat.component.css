@@ -142,16 +142,25 @@ button:hover {
   margin-right: 10px;
   background-color: #007bff;
   color: #fff;
-  padding: 5px 10px;
+  padding: 5px;
   border-radius: 50%;
-  min-width: 40px;
-  text-align: center;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
 }
 
 .avatar.self {
   background-color: #0d6efd;
   margin-left: 10px;
   margin-right: 0;
+}
+
+.message-data {
+  display: flex;
+  flex-direction: column;
 }
 
 .send-message {
@@ -179,4 +188,9 @@ button:hover {
 
 .send-button:hover {
   background-color: #0056b3;
+}
+
+.member-list ul {
+  list-style-type: none;
+  padding: 0;
 }
