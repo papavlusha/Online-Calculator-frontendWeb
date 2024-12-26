@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   downloadFile() {
     const link = document.createElement('a');
-    link.href = 'assets/about.pdf';  // путь к вашему файлу в папке assets
-    link.download = 'about.pdf';  // имя файла для скачивания
+    link.href = 'assets/about.txt';  // путь к вашему файлу в папке assets
+    link.download = 'about.txt';  // имя файла для скачивания
     link.click();
   }
 }
