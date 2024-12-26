@@ -10,10 +10,10 @@
       </div>
       <div *ngIf="tab === 'CHATROOM'" class="chat-content">
         <ul class="chat-messages">
-          <li *ngFor="let chat of publicChats" [class.self]="chat.senderName === userData.username">
-            <div class="avatar">{{ chat.senderName }} <div class="message-data">{{ chat.message }}</div></div>
-            
-          </li>
+          <div *ngFor="let chat of publicChats" [class.self]="chat.senderName === userData.username">
+            <div class="avatar">{{ chat.senderName }} </div>
+            <div class="message-data">{{ chat.message }}</div>
+          </div>
         </ul>
         <div class="send-message">
           <input type="text" class="input-message" placeholder="Enter the message" [(ngModel)]="userData.message" (input)="handleMessage($event)" />
@@ -22,10 +22,10 @@
       </div>
       <div *ngIf="tab !== 'CHATROOM'" class="chat-content">
         <ul class="chat-messages">
-          <li *ngFor="let chat of privateChats.get(tab)" [class.self]="chat.senderName === userData.username">
-            <div class="avatar">{{ chat.senderName }}<div class="message-data">{{ chat.message }}</div></div>
-            
-          </li>
+          <div *ngFor="let chat of privateChats.get(tab)" [class.self]="chat.senderName === userData.username">
+            <div class="avatar">{{ chat.senderName }}</div>
+            <div class="message-data">{{ chat.message }}</div>
+          </div>
         </ul>
         <div class="send-message">
           <input type="text" class="input-message" placeholder="Enter the message" [(ngModel)]="userData.message" (input)="handleMessage($event)" />
