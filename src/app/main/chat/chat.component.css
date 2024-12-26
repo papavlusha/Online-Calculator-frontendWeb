@@ -142,10 +142,9 @@ button:hover {
   margin-right: 10px;
   background-color: #007bff;
   color: #fff;
-  padding: 5px;
-  border-radius: 50%;
-  min-width: 30px;
+  width: 30px;
   height: 30px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,6 +160,7 @@ button:hover {
 .message-data {
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
 }
 
 .send-message {
